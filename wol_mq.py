@@ -9,8 +9,8 @@ from paho.mqtt import client as mqtt_client
 broker = 'bemfa.com'
 port = 9501
 topic = "ethanpc002"
-# generate client ID with pub prefix randomly
-client_id = '2f13e215aec14d059745eb027aea6d47'
+# 巴法平台控制台获取的私钥
+client_id = ''
 
 def mqtt_handle(data):
     if "on" in data:
