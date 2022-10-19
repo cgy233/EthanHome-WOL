@@ -1,6 +1,7 @@
 # python3.6
 
 import random
+import os
 
 from paho.mqtt import client as mqtt_client
 
@@ -11,10 +12,11 @@ topic = "ethanpc002"
 # generate client ID with pub prefix randomly
 client_id = '2f13e215aec14d059745eb027aea6d47'
 
-def wol():
-    pass
-    
-
+def mqtt_handle(data):
+    if "on" in data:
+        print(os.system("python wol.py EthanPC"))
+    elif "off" in data:
+        print(os.system('ssh Ethan@192.168.2.23 "shutdown -s -t 0"'))
 
 def connect_mqtt() -> mqtt_client:
     def on_connect(client, userdata, flags, rc):
@@ -32,6 +34,7 @@ def connect_mqtt() -> mqtt_client:
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
+        mqtt_handle(msg.payload.decode())
 
     client.subscribe(topic)
     client.on_message = on_message
