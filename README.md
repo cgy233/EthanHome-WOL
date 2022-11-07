@@ -4,6 +4,8 @@
 
 ## 食用方法
 
+[电脑入米家，让小爱同学随意操控电脑开关机](https://blog.csdn.net/cgy233/article/details/127407571)
+
 ## 参考
 
 [Wake-On-Lan-Python](https://github.com/bentasker/Wake-On-Lan-Python),
