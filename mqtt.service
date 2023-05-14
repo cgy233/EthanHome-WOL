@@ -1,0 +1,13 @@
+[Unit]  
+Description=MQTT Client Contral PC Daemon 
+After=network.target  
+Wants=network.target  
+[Service]  
+Type=simple
+WorkingDirectory=/root/tools/EthanHome-WOL
+ExecStart=/usr/bin/python3 main.py
+Restart=always  
+RestartSec=20s  
+User=root
+[Install]
+WantedBy=multi-user.target

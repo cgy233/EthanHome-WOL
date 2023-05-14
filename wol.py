@@ -36,7 +36,7 @@ class WakeOnLan(object):
     """
 
     new_config_dir = '~/.config/bentasker.Wake-On-Lan-Python'
-    config_file_name = 'wol_config.ini'
+    config_file_name = 'config.ini'
 
     def __init__(self, *extra_search_paths, prefer_local_config=False, **config):
         super(WakeOnLan, self).__init__()
@@ -131,7 +131,7 @@ class WakeOnLan(object):
 
     def __get_config_parser(self, config_path: Path) -> ConfigParser:
         """Return a config parser (generate a default config file if it does not exist)"""
-        config_parser = ConfigParser()
+        config_parser = ConfigParser(interpolation=None)
 
         if config_path.exists():
             return config_parser
