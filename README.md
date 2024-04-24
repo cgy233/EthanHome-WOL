@@ -50,10 +50,16 @@ cd EthanHome-WOL
 
 ### 3.常见错误
 
-1.python版本需对应，比如我现在这个环境用的是python3，可以先使用命令测试是否通过在使用安装脚本，
+有小伙伴看到存在找不到主机名的问题：
+
+```shell
+Invalid Hostname specified
+```
+
+1.python版本需对应，比如我现在这个环境用的是python3，可以先使用命令测试是否通过再使用安装脚本，
 
 ```bash
-python3 wol.py EthanPC,
+python3 wol.py -p hostname
 ```
 
 如果环境使用的是python，将mqtt.service文件的第8行的python3修改为python或你的python路径
